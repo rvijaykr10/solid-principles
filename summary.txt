@@ -1,0 +1,33 @@
+Summary of SOLID Principles with FastAPI Examples
+Single Responsibility Principle (SRP)
+
+Each module/class should have only one responsibility.
+FastAPI Example:
+Separate user registration logic (UserRegistrationService) from database operations (UserDatabaseService) to keep each class focused on a single task.
+Open/Closed Principle (OCP)
+
+Code should be open for extension but closed for modification.
+FastAPI Example:
+Add a new type of logger (e.g., FileLogger) without modifying the existing logging mechanism (log_event function).
+Liskov Substitution Principle (LSP)
+
+Subclasses should be substitutable for their parent classes.
+FastAPI Example:
+Use a common interface (DatabaseService) to interchangeably use PostgresService or MongoDBService for saving data.
+Interface Segregation Principle (ISP)
+
+A class should not implement methods it doesn't use.
+FastAPI Example:
+Split user actions into separate interfaces (CanLogin, CanRegister), ensuring no unnecessary methods are implemented in unrelated services.
+Dependency Inversion Principle (DIP)
+
+High-level modules should depend on abstractions rather than low-level modules.
+FastAPI Example:
+Use dependency injection in FastAPI to abstract user repository operations (UserRepository) and inject them into the service layer (UserService).
+Benefits of Applying SOLID Principles in FastAPI:
+
+Maintainability: Modular code makes it easier to update or debug specific parts.
+Scalability: Clear separation of concerns allows easy addition of new features.
+Testability: Smaller, focused components are easier to test.
+Flexibility: Abstractions and dependency injection enable changes without breaking existing functionality.
+By following SOLID principles, you can create a robust and scalable FastAPI project while adhering to clean architecture principles. 🚀
